@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae039f2c-894d-42d6-8275-a9c2f2fa220d" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/data/exams/2009.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2009.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2010.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2010.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2011.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2011.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2012.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2012.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2013.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2013.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2014.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2014.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2015.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2015.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2016.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2016.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2017.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2017.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2018.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2018.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2019.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2019.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2020.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2020.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2021/2021-q34.webp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/exams/2021.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2021.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2022.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2022.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2023.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2023.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2024.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2024.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/exams/2025.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2025.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +67,7 @@
       <workItem from="1794224900450" duration="92000" />
       <workItem from="1794226325614" duration="293000" />
       <workItem from="1794228034820" duration="1714000" />
+      <workItem from="1794233049508" duration="388000" />
     </task>
     <servers />
   </component>

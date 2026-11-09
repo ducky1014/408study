@@ -448,7 +448,7 @@ window.__EXAM_YEAR["2021"]={
     },
     {
       "no": 34,
-      "stem": "<p>若下图为一段差分曼彻斯特编码信号波形，则其编码的二进制位串是（ ）</p><img class=\"qimg fit-mid\" src=\"assets/2021/2021-q34.webp\"/>",
+      "stem": "<p>若下图为一段差分曼彻斯特编码信号波形，则其编码的二进制位串是（ ）</p><img class=\"qimg fit-mid\" src=\"assets/2021/2021-q34-2.webp\"/>",
       "opts": [
         "A. 10111001",
         "B. 11010001",
