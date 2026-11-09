@@ -152,7 +152,7 @@ window.__EXAM_YEAR["2023"]={
   "组成原理": [
     {
       "no": 12,
-      "stem": "<p>若机器 M 的主频为 1.5Ghz，在 M 上执行程序 p 的指令条数为\n<span class=\"fm\">5× 105</span>\n次方，p 的平均 CPI 为 1.2，则 p 在 M 上的指令执行速度和用户 CPU 时间分别为（ ）</p>",
+      "stem": "<p>若机器 M 的主频为 1.5Ghz，在 M 上执行程序 p 的指令条数为\n<span class=\"fm\">5× 10<sup>5</sup></span>\n次方，p 的平均 CPI 为 1.2，则 p 在 M 上的指令执行速度和用户 CPU 时间分别为（ ）</p>",
       "opts": [
         "A. 0.8GIPS、0.4ms",
         "B. 0.8GIPS、0.4μs",
@@ -160,7 +160,7 @@ window.__EXAM_YEAR["2023"]={
         "D. 1.25GIPS、0.4μs"
       ],
       "ans": "C",
-      "explain": "p 每条指令平均需要\n<span class=\"fm\">1.2</span>\n个时钟周期，机器 M 的主频为 1.5GHZ 代表每秒共有\n<span class=\"fm\">1.5G</span>\n个时钟周期，则每秒能执行 1.5G / 1.2 = 1.25G 条指令。执行 p 程序共需要\n<span class=\"fm\">5× 105× 1.2= 6× 105</span>\n个时\n钟周期，每秒有\n<span class=\"fm\">1.5G</span>\n个时钟周期，则\n<span class=\"fm\">6× 105</span>\n个时钟周期共需要\n<span class=\"fm\">6× 105/(1.5G× 103)= 0.4ms</span>\n。所以\n本题的正确答案为 C。"
+      "explain": "p 每条指令平均需要\n<span class=\"fm\">1.2</span>\n个时钟周期，机器 M 的主频为 1.5GHZ 代表每秒共有\n<span class=\"fm\">1.5G</span>\n个时钟周期，则每秒能执行 1.5G / 1.2 = 1.25G 条指令。执行 p 程序共需要\n<span class=\"fm\">5× 10<sup>5</sup>× 1.2= 6× 10<sup>5</sup></span>\n个时\n钟周期，每秒有\n<span class=\"fm\">1.5G</span>\n个时钟周期，则\n<span class=\"fm\">6× 105</span>\n个时钟周期共需要\n<span class=\"fm\">6× 10<sup>5</sup>/(1.5× 10<sup>9</sup>)= 0.4ms</span>\n。所以\n本题的正确答案为 C。"
     },
     {
       "no": 13,
@@ -196,7 +196,7 @@ window.__EXAM_YEAR["2023"]={
         "D. 40000000H~4FFFFFFFH"
       ],
       "ans": "C",
-      "explain": "由于 CPU 有 30 根地址线，每根地址线可以表示 2 个不同的状态（0 或 1）。因此，CPU\n的地址线共有\n<span class=\"fm\">230</span>\n个不同的地址。根据 RAM 和 ROM 的分配比，RAM 区占据整个地址空间的\n3/4，而 ROM 区占据剩下的 1/4，我们可以选取高位的两根地址线，00、01、10 分配给连续低\n地址的 RAM，则高位只剩下 11 可以分配，所以可以分配的地址范围为 110…00（28 个 0）~ 11…1\n（30 个 1)，十六进制表示为 300000000H ~ 3FFFFFFFFH。故本题的正确选项为 C。"
+      "explain": "由于 CPU 有 30 根地址线，每根地址线可以表示 2 个不同的状态（0 或 1）。因此，CPU\n的地址线共有\n<span class=\"fm\">2<sup>30</sup></span>\n个不同的地址。根据 RAM 和 ROM 的分配比，RAM 区占据整个地址空间的\n3/4，而 ROM 区占据剩下的 1/4，我们可以选取高位的两根地址线，00、01、10 分配给连续低\n地址的 RAM，则高位只剩下 11 可以分配，所以可以分配的地址范围为 110…00（28 个 0）~ 11…1\n（30 个 1)，十六进制表示为 300000000H ~ 3FFFFFFFFH。故本题的正确选项为 C。"
     },
     {
       "no": 16,
@@ -439,7 +439,7 @@ window.__EXAM_YEAR["2023"]={
   "计算机网络": [
     {
       "no": 33,
-      "stem": "<p>如图，2 段链路的数据传输速率为 100Mbps，时延带宽积（即单向传播时延*带宽）均为 1000bit。若 H1 向 H2 发送 1 个大小为 1MB 的文件，分组长度为 1000B，则从 H1 开始发送时刻起到 H2 收到文件全部数据时刻止，所需的时间至少是（注：\n<span class=\"fm\">M= 106</span>\n）?</p><img class=\"qimg fit-strip\" src=\"assets/2023/2023-q33.webp\"/>",
+      "stem": "<p>如图，2 段链路的数据传输速率为 100Mbps，时延带宽积（即单向传播时延*带宽）均为 1000bit。若 H1 向 H2 发送 1 个大小为 1MB 的文件，分组长度为 1000B，则从 H1 开始发送时刻起到 H2 收到文件全部数据时刻止，所需的时间至少是（注：\n<span class=\"fm\">M= 10<sup>6</sup></span>\n）?</p><img class=\"qimg fit-strip\" src=\"assets/2023/2023-q33.webp\"/>",
       "opts": [
         "A. 80.02ms",
         "B. 80.08ms",
@@ -459,7 +459,7 @@ window.__EXAM_YEAR["2023"]={
         "D. QAM-128"
       ],
       "ans": "C",
-      "explain": "对于无噪声理想信道，信道的最大数据传输率可以通过 奈奎斯特定理 计算，最大数据传输的次数为 2×4MHz=8MHz，代表每秒传输 8M 次，因为最大的数据传输率为 48Mbps，所以每次需要传输的比特数量为 48Mbps/8MHz=6 位，所以每次传输的数据量位 6 比特，那么采用的 QAM 调制方案为 26=64，即采用 QAM-64 的方案。本题的正确选项为 C。"
+      "explain": "对于无噪声理想信道，信道的最大数据传输率可以通过 奈奎斯特定理 计算，最大数据传输的次数为 2×4MHz=8MHz，代表每秒传输 8M 次，因为最大的数据传输率为 48Mbps，所以每次需要传输的比特数量为 48Mbps/8MHz=6 位，所以每次传输的数据量位 6 比特，那么采用的 QAM 调制方案为 2<sup>6</sup>=64，即采用 QAM-64 的方案。本题的正确选项为 C。"
     },
     {
       "no": 35,
@@ -471,7 +471,7 @@ window.__EXAM_YEAR["2023"]={
         "D. U3≤U2≤U1"
       ],
       "ans": "B",
-      "explain": "<p>停等协议的 信道利用率 公式为：</p><span class=\"fm\">TD+RTT+TATD</span><p>GBN 协议和 SR 协议的 信道利用率 公式为：</p><span class=\"fm\">TD+RTT+TAWTD</span><p>观察会发现，\n<span class=\"fm\">TD+RTT+TATD</span>\n项都是相同的，GBN 协议和 SR 协议的信道利用率需要比停等协议的信道利用率多乘上窗口大小（大于等于 1）。得出结论，停等协议的信道利用率 U1 最小，排除 C、D 选项。GBN 协议和 SR 协议的信道利用率主要看窗口大小谁比较大。题目说了帧序号位数为 3 比特，那 GBN 协议的发送窗口的尺寸\n<span class=\"fm\">W</span>\n，应满足：\n<span class=\"fm\">1≤ W≤ 2n− 1</span>\n。则发送窗口最大为\n<span class=\"fm\">23− 1= 7</span>\n。SR 协议的发送窗口的尺寸\n<span class=\"fm\">W</span>\n，应满足：\n<span class=\"fm\">1≤ W≤ 2n− 1</span>\n，则发送窗口最大为\n<span class=\"fm\">23−1</span>\n。因此 GBN 协议的信道利用率 U2 的最大值要大于 SR 协议的信道利用率 U3。综上所述，答案选择 B 选项。</p>"
+      "explain": "<p>停等协议的 信道利用率 公式为：</p><span class=\"fm\">TD+RTT+TATD</span><p>GBN 协议和 SR 协议的 信道利用率 公式为：</p><span class=\"fm\">TD+RTT+TAWTD</span><p>观察会发现，\n<span class=\"fm\">TD+RTT+TATD</span>\n项都是相同的，GBN 协议和 SR 协议的信道利用率需要比停等协议的信道利用率多乘上窗口大小（大于等于 1）。得出结论，停等协议的信道利用率 U1 最小，排除 C、D 选项。GBN 协议和 SR 协议的信道利用率主要看窗口大小谁比较大。题目说了帧序号位数为 3 比特，那 GBN 协议的发送窗口的尺寸\n<span class=\"fm\">W</span>\n，应满足：\n<span class=\"fm\">1≤ W≤ 2<sup>n</sup>− 1</span>\n。则发送窗口最大为\n<span class=\"fm\">2<sup>3</sup>− 1= 7</span>\n。SR 协议的发送窗口的尺寸\n<span class=\"fm\">W</span>\n，应满足：\n<span class=\"fm\">1≤ W≤ 2<sup>n</sup>− 1</span>\n，则发送窗口最大为\n<span class=\"fm\">2<sup>3</sup>−1</span>\n。因此 GBN 协议的信道利用率 U2 的最大值要大于 SR 协议的信道利用率 U3。综上所述，答案选择 B 选项。</p>"
     },
     {
       "no": 36,
@@ -483,7 +483,7 @@ window.__EXAM_YEAR["2023"]={
         "D. 819.2us"
       ],
       "ans": "C",
-      "explain": "基于 指数退避算法，每次发生冲突后，网卡会随机选择一个等待时间，在\n<span class=\"fm\">0</span>\n到\n<span class=\"fm\">2k− 1</span>\n个时间片之间等待，其中\n<span class=\"fm\">k</span>\n是当前发生冲突的次数。根据问题描述，发生了连续\n<span class=\"fm\">4</span>\n次冲\n突，即\n<span class=\"fm\">k= 4</span>\n。那么根据二进制指数退避算法，等待时间将在\n<span class=\"fm\">0</span>\n到\n<span class=\"fm\">24− 1</span>\n之间。最长的等待时间即\n为\n<span class=\"fm\">15</span>\n个时间片。计算如下：\n<span class=\"fm\">24− 1= 16− 1= 15</span>\n，每个时间片的时长为\n<span class=\"fm\">51.2us</span>\n，因此最长的等待时间\n为\n<span class=\"fm\">15× 51.2us= 768us</span>\n。选择 C 选项。"
+      "explain": "基于 指数退避算法，每次发生冲突后，网卡会随机选择一个等待时间，在\n<span class=\"fm\">0</span>\n到\n<span class=\"fm\">2<sup>k</sup>− 1</span>\n个时间片之间等待，其中\n<span class=\"fm\">k</span>\n是当前发生冲突的次数。根据问题描述，发生了连续\n<span class=\"fm\">4</span>\n次冲\n突，即\n<span class=\"fm\">k= 4</span>\n。那么根据二进制指数退避算法，等待时间将在\n<span class=\"fm\">0</span>\n到\n<span class=\"fm\">2<sup>4</sup>− 1</span>\n之间。最长的等待时间即\n为\n<span class=\"fm\">15</span>\n个时间片。计算如下：\n<span class=\"fm\">2<sup>4</sup>− 1= 16− 1= 15</span>\n，每个时间片的时长为\n<span class=\"fm\">51.2us</span>\n，因此最长的等待时间\n为\n<span class=\"fm\">15× 51.2us= 768us</span>\n。选择 C 选项。"
     },
     {
       "no": 37,
@@ -531,7 +531,7 @@ window.__EXAM_YEAR["2023"]={
         "D. 仅III、IV"
       ],
       "ans": "D",
-      "explain": "<p>IPv4 是 32 位的地址长度，而 IPv6 是 128 位的地址长度，二者相差了 96 位，由于是二进制表示，所以地址数量相差了\n<span class=\"fm\">296</span>\n倍。因此 I 错误。</p><p>IPv4 的基本首部有选项字段，因此长度可变；\nIPv6 将可选字段移除，变成了扩展首部，但是扩展首部被放在了有效载荷中，因此基本首部长度是不可变的，Ⅱ错误。</p><p>在完全过渡到 IPv6 之前，IPv4 和 IPv6 并行使用，可以采用双协议栈技术和隧道技术进行。Ⅲ 正确。</p><p>IPv6 首部的 Hop-Limit 表示跳数限制，代表了 IPv6 数据报在网络中的最大跳数；\n而 IPv4 首部的 TTL 字段表示最大寿命，也表示了 IPv4 数据报在网络中的最大跳数，\n如果超出了 TTL，则该 IP 数据报要被丢弃。Ⅳ 正确。</p><p>综上所述，答案选择 D 选项。</p>"
+      "explain": "<p>IPv4 是 32 位的地址长度，而 IPv6 是 128 位的地址长度，二者相差了 96 位，由于是二进制表示，所以地址数量相差了\n<span class=\"fm\">2<sup>96</sup></span>\n倍。因此 I 错误。</p><p>IPv4 的基本首部有选项字段，因此长度可变；\nIPv6 将可选字段移除，变成了扩展首部，但是扩展首部被放在了有效载荷中，因此基本首部长度是不可变的，Ⅱ错误。</p><p>在完全过渡到 IPv6 之前，IPv4 和 IPv6 并行使用，可以采用双协议栈技术和隧道技术进行。Ⅲ 正确。</p><p>IPv6 首部的 Hop-Limit 表示跳数限制，代表了 IPv6 数据报在网络中的最大跳数；\n而 IPv4 首部的 TTL 字段表示最大寿命，也表示了 IPv4 数据报在网络中的最大跳数，\n如果超出了 TTL，则该 IP 数据报要被丢弃。Ⅳ 正确。</p><p>综上所述，答案选择 D 选项。</p>"
     },
     {
       "no": 47,

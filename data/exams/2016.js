@@ -40,7 +40,7 @@ window.__EXAM_YEAR["2016"]={
     },
     {
       "no": 4,
-      "stem": "<p>有一个 100 阶的三对角矩阵\n<span class=\"fm\">M</span>\n，其元素\n<span class=\"fm\">mi,j(1≤ i≤ 100,1≤ j≤ 100)</span>\n 按行优先依次压缩存入下标从 0 开始的一维数组 N 中。元素\n<span class=\"fm\">m30,30</span>\n 在数组 N 中的下标是（ ）。</p>",
+      "stem": "<p>有一个 100 阶的三对角矩阵\n<span class=\"fm\">M</span>\n，其元素\n<span class=\"fm\">m<sub>i,j</sub>(1≤ i≤ 100,1≤ j≤ 100)</span>\n 按行优先依次压缩存入下标从 0 开始的一维数组 N 中。元素\n<span class=\"fm\">m<sub>30,30</sub></span>\n 在数组 N 中的下标是（ ）。</p>",
       "opts": [
         "A. 86",
         "B. 87",
@@ -48,7 +48,7 @@ window.__EXAM_YEAR["2016"]={
         "D. 89"
       ],
       "ans": "B",
-      "explain": "<p>参考三对角矩阵，采用压缩存储，将 3 条对角线上的元素按行优先方式存放在一 维数组 B 中，且\n<span class=\"fm\">a1,1</span>\n存放于 B[0] 中，其存储形式如下所示：</p><p>可以计算矩阵 A 中 3 条对角线上的元素\n<span class=\"fm\">ai,j</span>\n(\n<span class=\"fm\">1≤ i,j≤ n,∣i− j∣≤ 1</span>\n) 在一维数组 B 中存放的下标为\n<span class=\"fm\">k= 2i+ j− 3</span>\n。</p><p>解法一：针对该题，仅需将数字逐一代入公式里面即可：k=2x30+30-3 = 87, 结果为 87。</p><p>解法二：观察上图的三对角矩阵不难发现，第一行有两个元素，剩下的在元素\n<span class=\"fm\">m30,30</span>\n所在行之前的 28 行（注意下标\n<span class=\"fm\">1≤ i≤ 100</span>\n、\n<span class=\"fm\">1≤ j≤ 100</span>\n）中每行都有 3 个元素，而\n<span class=\"fm\">m30,30</span>\n之前仅有一个元素\n<span class=\"fm\">m30,29</span>\n, 那么不难发现元素\n<span class=\"fm\">m30,30</span>\n在数组 N 中的下标是：2+28x3+2-1 = 87。</p>"
+      "explain": "<p>参考三对角矩阵，采用压缩存储，将 3 条对角线上的元素按行优先方式存放在一 维数组 B 中，且\n<span class=\"fm\">a<sub>1,1</sub></span>\n存放于 B[0] 中，其存储形式如下所示：</p><p>可以计算矩阵 A 中 3 条对角线上的元素\n<span class=\"fm\">a<sub>i,j</sub></span>\n(\n<span class=\"fm\">1≤ i,j≤ n,∣i− j∣≤ 1</span>\n) 在一维数组 B 中存放的下标为\n<span class=\"fm\">k= 2i+ j− 3</span>\n。</p><p>解法一：针对该题，仅需将数字逐一代入公式里面即可：k=2x30+30-3 = 87, 结果为 87。</p><p>解法二：观察上图的三对角矩阵不难发现，第一行有两个元素，剩下的在元素\n<span class=\"fm\">m<sub>30,30</sub></span>\n所在行之前的 28 行（注意下标\n<span class=\"fm\">1≤ i≤ 100</span>\n、\n<span class=\"fm\">1≤ j≤ 100</span>\n）中每行都有 3 个元素，而\n<span class=\"fm\">m<sub>30,30</sub></span>\n之前仅有一个元素\n<span class=\"fm\">m<sub>30,29</sub></span>\n, 那么不难发现元素\n<span class=\"fm\">m<sub>30,30</sub></span>\n在数组 N 中的下标是：2+28x3+2-1 = 87。</p>"
     },
     {
       "no": 5,
@@ -208,7 +208,7 @@ window.__EXAM_YEAR["2016"]={
         "D. 16"
       ],
       "ans": "C",
-      "explain": "参考 主存容量的扩展，5FFFH - 4000H + 1 = 2000H，即 ROM 区容量为\n<span class=\"fm\">213</span>\nB = 8KB（2000H =\n<span class=\"fm\">2× 163= 213</span>\n），RAM 区容量为 56KB（64KB-8KB=56KB），则需要 8 Kx4 位的 SRAM 芯片的数量为 14（56KB/(8Kx4bit)=14）。"
+      "explain": "参考 主存容量的扩展，5FFFH - 4000H + 1 = 2000H，即 ROM 区容量为\n<span class=\"fm\">2<sup>13</sup></span>\nB = 8KB（2000H =\n<span class=\"fm\">2× 16<sup>3</sup>= 2<sup>13</sup></span>\n），RAM 区容量为 56KB（64KB-8KB=56KB），则需要 8 Kx4 位的 SRAM 芯片的数量为 14（56KB/(8Kx4bit)=14）。"
     },
     {
       "no": 17,
@@ -456,7 +456,7 @@ window.__EXAM_YEAR["2016"]={
         "D. 80kbps"
       ],
       "ans": "C",
-      "explain": "<p>本题考查的是 香农定理，它给出了带宽受限信道的最大数据传输速率公式：</p><span class=\"fm\">C= B⋅ log₂(1+ SNR)</span><p>其中：</p><ul><li><span class=\"fm\">C</span>\n：理论最大数据传输速率（单位：bps）</li><li><span class=\"fm\">B</span>\n：信道带宽（单位：Hz）</li><li><span class=\"fm\">SNR</span>\n：信噪比（<strong>单位是比值</strong>，不是 dB）</li></ul><p><strong>步骤 1：将 dB 转换为比值</strong></p><p>信噪比为 30 dB：</p><span class=\"fm\">SNRratio= 1030/10= 103= 1000</span><p><strong>步骤 2：带入香农公式计算最大数据速率</strong></p><span class=\"fm\">C= 8000⋅ log₂(1+ 1000)≈ 8000⋅ log₂(1001)</span><p>利用换底公式（或估算）：</p><span class=\"fm\">log₂(1001)≈ log₂(1024)= 10</span><p>所以：</p><span class=\"fm\">C≈ 8000⋅ 10= 80000bps= 80kbps</span><p><strong>步骤 3：实际传输速率为理论值的 50%</strong></p><span class=\"fm\">实际速率= 0.5⋅ 80kbps= 40kbps</span><p>所以正确答案：<strong>C. 40 kbps</strong></p>"
+      "explain": "<p>本题考查的是 香农定理，它给出了带宽受限信道的最大数据传输速率公式：</p><span class=\"fm\">C= B⋅ log₂(1+ SNR)</span><p>其中：</p><ul><li><span class=\"fm\">C</span>\n：理论最大数据传输速率（单位：bps）</li><li><span class=\"fm\">B</span>\n：信道带宽（单位：Hz）</li><li><span class=\"fm\">SNR</span>\n：信噪比（<strong>单位是比值</strong>，不是 dB）</li></ul><p><strong>步骤 1：将 dB 转换为比值</strong></p><p>信噪比为 30 dB：</p><span class=\"fm\">SNRratio= 10<sup>30/10</sup>= 10<sup>3</sup>= 1000</span><p><strong>步骤 2：带入香农公式计算最大数据速率</strong></p><span class=\"fm\">C= 8000⋅ log₂(1+ 1000)≈ 8000⋅ log₂(1001)</span><p>利用换底公式（或估算）：</p><span class=\"fm\">log₂(1001)≈ log₂(1024)= 10</span><p>所以：</p><span class=\"fm\">C≈ 8000⋅ 10= 80000bps= 80kbps</span><p><strong>步骤 3：实际传输速率为理论值的 50%</strong></p><span class=\"fm\">实际速率= 0.5⋅ 80kbps= 40kbps</span><p>所以正确答案：<strong>C. 40 kbps</strong></p>"
     },
     {
       "no": 35,
