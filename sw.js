@@ -1,5 +1,5 @@
 /* 408 学习站 Service Worker：首访后静态资源与真题数据本地缓存，二次打开更快 */
-const CACHE = 'ducky408-v4';
+const CACHE = 'ducky408-v5';
 const CORE = ['./', './index.html'];
 
 self.addEventListener('install', e => {

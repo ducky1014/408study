@@ -143,6 +143,11 @@ html[data-theme="dark"] .img-zoom img{filter:invert(1) hue-rotate(180deg)}
 .table-wrap>table{margin:0}
 .qstem th{background:var(--soft)}
 .qopts{list-style:none;margin:12px 0 4px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+/* 选项里是多行代码时，每个选项独占一行，代码保留换行与缩进 */
+.qopts.qopts-code{grid-template-columns:1fr}
+.qopt-btn pre{margin:7px 0 0;background:var(--soft);border:1px solid var(--line);border-radius:8px;
+  padding:8px 11px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+.qopt-btn pre code{font-family:"SF Mono",Menlo,Consolas,monospace;color:var(--ink);white-space:pre}
 .qopt-note{font-size:13px;color:var(--mut);margin:10px 0 0}
 .qopts li{font-size:14px}
 .qopt-btn{width:100%;text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);
@@ -417,24 +422,55 @@ function wrapTables(root){
 }
 function questionCard(q,year){
   const isBig=q.no>=41;
+
   let opts='';
   if(q.opts&&q.opts.length){
-    opts='<ul class="qopts">'+q.opts.map(o=>{
-      const k=o.charAt(0), rest=o.replace(/^[A-D]\.\s*/,'');
-      return '<li><button type="button" class="qopt-btn" data-key="'+k+'"><span class="k">'+k+'.</span>'+rest+'</button></li>';
-    }).join('')+'</ul>';
+    // 选项含多行代码时改为单列展示，避免左右挤压
+    const hasCode=q.opts.some(o=>/<pre[\s>]/i.test(o));
+    const listClass='qopts'+(hasCode?' qopts-code':'');
+    // 正常选择题：每行一个 <li>，按钮里带字母和选项内容
+    const items=q.opts.map(o=>{
+      const k=o.charAt(0);
+      const rest=o.replace(/^[A-D]\.\s*/,'');
+      return '<li>'+
+        '<button type="button" class="qopt-btn" data-key="'+k+'">'+
+          '<span class="k">'+k+'.</span>'+
+          rest+
+        '</button>'+
+      '</li>';
+    });
+    opts='<ul class="'+listClass+'">'+items.join('')+'</ul>';
   }else if(q.ans&&!isBig){
     // 选项直接画在题干图片中的题目，提供字母按钮以便自测判分
-    opts='<div class="qopt-note">本题选项见题干图片，请对照图片选择字母：</div><ul class="qopts qopts-img">'+
-      ['A','B','C','D'].map(k=>'<li><button type="button" class="qopt-btn" data-key="'+k+'"><span class="k">'+k+'.</span>见题图</button></li>').join('')+'</ul>';
+    const items=['A','B','C','D'].map(k=>
+      '<li>'+
+        '<button type="button" class="qopt-btn" data-key="'+k+'">'+
+          '<span class="k">'+k+'.</span>'+
+          '见题图'+
+        '</button>'+
+      '</li>'
+    );
+    opts='<div class="qopt-note">本题选项见题干图片，请对照图片选择字母：</div>'+
+      '<ul class="qopts qopts-img">'+items.join('')+'</ul>';
   }
+
   const badge=q.ans?'<span class="ans-badge">标准答案 '+q.ans+'</span>':'';
   const sum=isBig?'查看参考答案与详解':'查看答案与解析';
+  const ansBody=badge+
+    (q.ans?'<strong>正确答案：'+q.ans+'</strong><br/>':'')+
+    q.explain;
+
   return '<div class="qcard" id="q-'+year+'-'+q.no+'" data-ans="'+(q.ans||'')+'">'+
-    '<div class="qstem"><span class="qno">'+(isBig?'第'+q.no+'题':q.no)+'</span>'+lazyImg(q.stem)+'</div>'+
+    '<div class="qstem">'+
+      '<span class="qno">'+(isBig?'第'+q.no+'题':q.no)+'</span>'+
+      lazyImg(q.stem)+
+    '</div>'+
     opts+
     '<div class="qresult"></div>'+
-    '<details class="ans"><summary>'+sum+'</summary><div class="ans-body">'+lazyImg(badge+(q.ans?'<strong>正确答案：'+q.ans+'</strong><br/>':'')+q.explain)+'</div></details>'+
+    '<details class="ans">'+
+      '<summary>'+sum+'</summary>'+
+      '<div class="ans-body">'+lazyImg(ansBody)+'</div>'+
+    '</details>'+
   '</div>';
 }
 
@@ -609,20 +645,42 @@ function fixXlinkImages(){
 function bind(){
   // 选择题交互判分（事件委托）
   document.addEventListener('click',e=>{
-    const btn=e.target.closest('.qopt-btn'); if(!btn) return;
+    const btn=e.target.closest('.qopt-btn');
+    if(!btn) return;
+
     const card=btn.closest('.qcard');
     if(!card||card.dataset.done) return;
     card.dataset.done='1';
-    const correct=card.dataset.ans, chosen=btn.dataset.key;
+
+    const correct=card.dataset.ans;
+    const chosen=btn.dataset.key;
+
+    // 禁用所有选项，并标出正确答案
     card.querySelectorAll('.qopt-btn').forEach(b=>{
       b.disabled=true;
-      if(b.dataset.key===correct) b.classList.add('opt-correct');
+      if(b.dataset.key===correct){
+        b.classList.add('opt-correct');
+      }
     });
-    if(chosen!==correct) btn.classList.add('opt-wrong');
-    card.querySelector('.qresult').innerHTML=(chosen===correct)
-      ? '<div class="qok">回答正确</div>'
-      : '<div class="qbad">回答错误，标准答案为 '+correct+'</div>';
-    const d=card.querySelector('details.ans'); if(d) d.open=true;
+
+    // 选错时把所选项标红
+    if(chosen!==correct){
+      btn.classList.add('opt-wrong');
+    }
+
+    // 显示判分结果
+    const result=card.querySelector('.qresult');
+    if(chosen===correct){
+      result.innerHTML='<div class="qok">回答正确</div>';
+    }else{
+      result.innerHTML='<div class="qbad">回答错误，标准答案为 '+correct+'</div>';
+    }
+
+    // 自动展开答案解析
+    const d=card.querySelector('details.ans');
+    if(d){
+      d.open=true;
+    }
   });
   // 正文手风琴：打开一个年份/章节时，收起其他已展开的年份/章节
   function closeOtherYears(except){

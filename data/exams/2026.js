@@ -18,10 +18,10 @@ window.__EXAM_YEAR["2026"]={
       "no": 2,
       "stem": "<p>已知带头结点的双向链表 L 含有 n（n≥3）个元素，结点结构为 <code>p2 | d | p1</code>，其中 p2 和 p1 分别是指向其直接前驱和直接后继结点的指针，指针 head 指向头结点，指针 cu=head。现要将 L 各结点中的 p2 指针修改为指向 p1 所指结点的直接后继结点。当指针指向的结点不存在时，相应的指针值为 NULL。下列选项中，可以完成修改功能的是（ ）。</p>",
       "opts": [
-        "A. <code>while(cu!=NULL){cu-&gt;p2=cu-&gt;p1-&gt;p1;cu=cu-&gt;p1;}</code>",
-        "B. <code>while(cu!=NULL&amp;&amp;cu-&gt;p2!=NULL){cu-&gt;p2=cu-&gt;p1-&gt;p1;cu=cu-&gt;p1;}</code>",
-        "C. <code>while(cu!=NULL){if(cu-&gt;p1!=NULL){cu-&gt;p2=cu-&gt;p1-&gt;p1;cu=cu-&gt;p1;}}</code>",
-        "D. <code>while(cu!=NULL){if(cu-&gt;p1!=NULL) cu-&gt;p2=cu-&gt;p1-&gt;p1; else cu-&gt;p2=NULL; cu=cu-&gt;p1;}</code>"
+        "A. <pre><code>while (cu != NULL) {\n    cu-&gt;p2 = cu-&gt;p1-&gt;p1;\n    cu = cu-&gt;p1;\n}</code></pre>",
+        "B. <pre><code>while (cu != NULL &amp;&amp; cu-&gt;p2 != NULL) {\n    cu-&gt;p2 = cu-&gt;p1-&gt;p1;\n    cu = cu-&gt;p1;\n}</code></pre>",
+        "C. <pre><code>while (cu != NULL) {\n    if (cu-&gt;p1 != NULL) {\n        cu-&gt;p2 = cu-&gt;p1-&gt;p1;\n        cu = cu-&gt;p1;\n    }\n}</code></pre>",
+        "D. <pre><code>while (cu != NULL) {\n    if (cu-&gt;p1 != NULL)\n        cu-&gt;p2 = cu-&gt;p1-&gt;p1;\n    else\n        cu-&gt;p2 = NULL;\n    cu = cu-&gt;p1;\n}</code></pre>"
       ],
       "ans": "D",
       "explain": "<p>目标是把每个结点的 p2 改为“原 p1 所指结点的直接后继”。沿 p1 遍历时，最后一个结点的 p1 为 NULL，此时应把它的 p2 置为 NULL；若像 C 那样直接跳过，最后一个结点的 p2 不会被修改。D 对 p1 是否为 NULL 分别处理，并用 p1 继续遍历，能完整完成修改。A、B 在 p1 为 NULL 时会解引用空指针或提前结束。故选 D。</p>"
