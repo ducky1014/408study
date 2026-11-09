@@ -265,11 +265,15 @@ html[data-theme="dark"] .ans-badge{background:rgba(4,120,87,.18);border-color:#0
 html[data-theme="dark"] .note.warn{background:rgba(180,83,9,.15);border-color:#78350f}
 html[data-theme="dark"] .note.key{background:rgba(8,145,178,.13);border-color:#155e75}
 html[data-theme="dark"] .quick-memo{background:linear-gradient(135deg,#0d1b2e,#0c2431);border-color:#164e63}
-/* 主题切换按钮 */
-.theme-toggle{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:9px;
-  padding:7px 12px;font-size:13px;cursor:pointer;flex:0 0 auto;white-space:nowrap;line-height:1.2}
-.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+/* 主题切换按钮（紧凑圆形图标，避免遮挡界面） */
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;
+  width:32px;height:32px;padding:0;border:1px solid var(--line);background:var(--card);color:var(--ink);
+  border-radius:50%;font-size:15px;line-height:1;cursor:pointer;flex:0 0 auto;white-space:nowrap;
+  transition:border-color .15s,color .15s,transform .15s}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent);transform:scale(1.06)}
+.theme-toggle:active{transform:scale(.94)}
 .brand .theme-toggle{position:absolute;right:16px;top:18px}
+.mbar .theme-toggle{width:34px;height:34px;padding:0;font-size:16px;border-radius:50%}
 .ex-block{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
 .ex-title{font-size:13px;font-weight:800;color:var(--accent);margin-bottom:10px}
 </style>
@@ -862,7 +866,13 @@ function bind(){
   const themeBtns=[document.getElementById('themeBtn'),document.getElementById('themeBtnM')].filter(Boolean);
   function paintIcon(){
     const dark=document.documentElement.getAttribute('data-theme')==='dark';
-    themeBtns.forEach(b=>b.textContent=dark?'切换浅色模式':'切换深色模式');
+    const label=dark?'切换浅色模式':'切换深色模式';
+    themeBtns.forEach(b=>{
+      b.textContent=dark?'☀️':'🌙';
+      b.setAttribute('aria-label',label);
+      b.setAttribute('title',label);
+      b.setAttribute('aria-pressed',dark?'true':'false');
+    });
   }
   paintIcon();
   themeBtns.forEach(b=>b.addEventListener('click',()=>{
