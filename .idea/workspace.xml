@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae039f2c-894d-42d6-8275-a9c2f2fa220d" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/assets/2021/2021-q34.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2014/2014-q34.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2014/2014-q34.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2016/2016-q41-1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2016/2016-q41-1.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2016/2016-q41-2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2017/2017-q35.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2017/2017-q35.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2017/2017-q47.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2017/2017-q47.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2020/2020-q35.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2020/2020-q35.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2020/2020-q37.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2020/2020-q37.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2021/2021-q40.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2021/2021-q40.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2021/2021-q47.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2021/2021-q47.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2022/2022-q47.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2022/2022-q47.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2023/2023-q19.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2023/2023-q19.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2023/2023-q33.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2023/2023-q33.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2023/2023-q38.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2023/2023-q38.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/2023/2023-q47.webp" beforeDir="false" afterPath="$PROJECT_DIR$/assets/2023/2023-q47.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/exams/2016.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2016.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/exams/2017.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2017.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/exams/2021.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2021.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/exams/2023.js" beforeDir="false" afterPath="$PROJECT_DIR$/data/exams/2023.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +84,7 @@
       <workItem from="1794226325614" duration="293000" />
       <workItem from="1794228034820" duration="1714000" />
       <workItem from="1794233049508" duration="388000" />
+      <workItem from="1794234877089" duration="1789000" />
     </task>
     <servers />
   </component>
