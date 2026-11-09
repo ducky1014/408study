@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="860" viewBox="0 0 850 430" role="img" aria-label="主机 H 与 DHCP 服务器交换 DHCP 报文的时序图">
+  <rect width="850" height="430" fill="#fff"/>
+  <defs>
+    <marker id="q36a" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" refX="12" refY="6.5" orient="auto">
+      <path d="M0,0 L12,6.5 L0,13" fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="#111" stroke-width="1.6" stroke-linecap="round">
+    <line x1="300" y1="70" x2="300" y2="380"/>
+    <line x1="650" y1="70" x2="650" y2="380"/>
+    <line x1="650" y1="125" x2="300" y2="180" marker-end="url(#q36a)"/>
+    <line x1="300" y1="245" x2="650" y2="315" marker-end="url(#q36a)"/>
+  </g>
+  <g fill="#111" font-family="'Microsoft YaHei','PingFang SC',Arial,sans-serif" text-anchor="middle">
+    <text x="300" y="52" font-size="20" font-weight="700">H</text>
+    <text x="650" y="52" font-size="20" font-weight="700">DHCP</text>
+    <text x="662" y="92" font-size="17" text-anchor="start">192.168.5.1</text>
+    <text x="475" y="140" font-size="17">yiaddr:192.168.5.9</text>
+    <text x="475" y="266" font-size="17">yiaddr:192.168.5.9</text>
+  </g>
+</svg>
