@@ -1036,10 +1036,32 @@ requestAnimationFrame(function(){ requestAnimationFrame(function(){ if(window.__
 
 </script>
 <script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
-    navigator.serviceWorker.register('sw.js').catch(function () {});
+/* Service Worker：内容更新后新版本接管时自动刷新页面，无需手动刷新 */
+(function(){
+  if (!('serviceWorker' in navigator)) return;
+  var hadController = !!navigator.serviceWorker.controller;
+  var reloading = false;
+
+  // 新版本激活并接管当前页面时，自动重载一次拿到新内容
+  // （首次访问安装时 hadController 为 false，不会触发多余刷新）
+  navigator.serviceWorker.addEventListener('controllerchange', function(){
+    if (!hadController || reloading) return;
+    reloading = true;
+    window.location.reload();
   });
-}
+
+  window.addEventListener('load', function(){
+    navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).then(function(reg){
+      // 回到前台时、以及每隔 30 分钟检查一次是否有新版本
+      function checkUpdate(){
+        if (document.visibilityState !== 'visible' || !navigator.onLine) return;
+        reg.update().catch(function(){});
+      }
+      document.addEventListener('visibilitychange', checkUpdate);
+      setInterval(checkUpdate, 30 * 60 * 1000);
+      checkUpdate();
+    }).catch(function(){});
+  });
+})();
 </script>
 </body>
