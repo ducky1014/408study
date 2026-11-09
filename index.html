@@ -122,6 +122,11 @@ section.block{padding:40px 0 8px}
 .qstem p{margin:8px 0}
 .qstem pre{background:#fff;color:var(--ink);padding:13px 15px;border:1px solid var(--line);border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.6;margin:10px 0}
 .qstem pre code{font-family:"SF Mono",Menlo,Consolas,monospace;color:var(--ink);white-space:pre}
+/* 多个代码段并排展示（如 2021 年第 45 题） */
+.qstem .code-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:12px 0;align-items:stretch}
+.qstem .code-col{display:flex;flex-direction:column;min-width:0}
+.qstem .code-col-t{font-size:12.5px;font-weight:700;color:var(--ink2);text-align:center;margin:0 0 6px}
+.qstem .code-cols pre{margin:0;flex:1}
 .qimg,.qstem img{display:block;max-width:100%;height:auto;border-radius:10px;border:1px solid var(--line);margin:10px auto;background:#fff;cursor:zoom-in}
 .qimg.fit-v,.qstem img.fit-v{max-width:min(100%,440px)}
 .qimg.fit-sq,.qstem img.fit-sq{max-width:min(100%,480px)}
@@ -244,6 +249,10 @@ footer{border-top:1px solid var(--line);margin-top:50px;padding:28px 0;backgroun
   .qcard table th,.qcard table td{white-space:normal}
   .qimg,.qstem img{max-width:100%;margin:8px auto}
   .qimg[class*="fit-"],.qstem img[class*="fit-"]{max-width:100%}
+}
+/* 窄屏下并排代码段改为上下排列 */
+@media (max-width:640px){
+  .qstem .code-cols{grid-template-columns:1fr}
 }
 /* ===== 深色模式（data-theme 控制，默认跟随系统）===== */
 html[data-theme="dark"]{
